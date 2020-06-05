@@ -1,0 +1,175 @@
+// importing other scss files
+@import "variables";
+@import "utilities";
+@import "mixins";
+// 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $dark-grey;
+}
+
+main {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.3fr 2fr 2fr;
+    grid-template-rows: 70px auto;
+    grid-template-areas: "navbar navbar navbar"
+        "arrows text-content image-content"
+        "arrows text-content image-content"
+        "arrows text-content image-content";
+
+    .navbar {
+        grid-area: navbar;
+        // background-color: pink;
+        @include flexy(space-between, center, row);
+
+        .brand {
+            border: 2px solid $whity;
+            margin-left: 30px;
+            font-family: $font-one;
+
+            h2 {
+                margin: 3px 15px;
+                color: $whity;
+            }
+        }
+
+        .hamburger {
+            margin-right: 30px;
+
+            div {
+                width: 30px;
+                border: 1px solid $whity;
+                margin-top: 8px;
+            }
+        }
+    }
+
+    .arrows {
+        grid-area: arrows;
+        // background-color: orange;
+        @include flexy(center, center, column);
+
+        a {
+            font-size: 4rem;
+            text-decoration: none;
+            color: $whity;
+            outline-style: none;
+
+            &:hover {
+                color: $light-grey;
+            }
+        }
+
+        .arrow-up {
+            transition: all 0.5s ease;
+
+            &:hover {
+                transform: scaleY(1.5);
+            }
+        }
+
+        .arrow-down {
+            margin-top: 20px;
+            transition: all 0.5s ease;
+
+            &:hover {
+                transform: scaleY(1.5);
+            }
+        }
+    }
+
+    .text-content {
+        grid-area: text-content;
+        // background-color: skyblue;
+        @include flexy(center, center, column);
+        position: relative;
+
+        .container {
+            position: absolute;
+            right: -250px;
+            width: 96%;
+            @include flexy(center, flex-start, column);
+            // background-color: cyan;
+
+            h2 {
+                font-family: $font-two;
+                font-size: $size-h2;
+                color: $light-grey;
+            }
+
+            h1 {
+                font-family: $font-one;
+                font-size: $size-h1;
+                position: relative;
+                color: $whity;
+
+                .tag-one {
+                    font-size: $size-h4;
+                    position: absolute;
+                }
+            }
+
+            p {
+                font-family: $font-one;
+                font-size: $size-p;
+                color: $light-grey;
+                line-height: 1.5rem;
+                text-align: left;
+                margin-right: 32%;
+            }
+
+            .cta {
+                align-items: center;
+                margin-top: 8%;
+                color: $whity;
+
+                h4 {
+                    font-family: $font-two;
+                    font-size: $size-h4;
+                    transition: all 0.5s ease;
+                }
+
+                span {
+                    margin-left: 20px;
+                    font-size: $size-h2;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: $whity;
+                outline-style: none;
+                transition: all 1s ease;
+                @include flexy(flex-start, center, row);
+
+                &:hover {
+                    color: skyblue;
+                    transform: scale(1.01);
+                }
+            }
+
+        }
+    }
+
+    .image-content {
+        grid-area: image-content;
+        // background-color: violet;
+        @include flexy(center, center, column);
+
+        img {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #212121;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.3fr 2fr 2fr;
+  grid-template-rows: 70px auto;
+  grid-template-areas: "navbar navbar navbar" "arrows text-content image-content" "arrows text-content image-content" "arrows text-content image-content";
+}
+main .navbar {
+  grid-area: navbar;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+main .navbar .brand {
+  border: 2px solid whitesmoke;
+  margin-left: 30px;
+  font-family: "Jost", sans-serif;
+}
+main .navbar .brand h2 {
+  margin: 3px 15px;
+  color: whitesmoke;
+}
+main .navbar .hamburger {
+  margin-right: 30px;
+}
+main .navbar .hamburger div {
+  width: 30px;
+  border: 1px solid whitesmoke;
+  margin-top: 8px;
+}
+main .arrows {
+  grid-area: arrows;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .arrows a {
+  font-size: 4rem;
+  text-decoration: none;
+  color: whitesmoke;
+  outline-style: none;
+}
+main .arrows a:hover {
+  color: rgba(157, 157, 157, 0.876);
+}
+main .arrows .arrow-up {
+  transition: all 0.5s ease;
+}
+main .arrows .arrow-up:hover {
+  transform: scaleY(1.5);
+}
+main .arrows .arrow-down {
+  margin-top: 20px;
+  transition: all 0.5s ease;
+}
+main .arrows .arrow-down:hover {
+  transform: scaleY(1.5);
+}
+main .text-content {
+  grid-area: text-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+main .text-content .container {
+  position: absolute;
+  right: -250px;
+  width: 96%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+main .text-content .container h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  color: rgba(157, 157, 157, 0.876);
+}
+main .text-content .container h1 {
+  font-family: "Jost", sans-serif;
+  font-size: 7rem;
+  position: relative;
+  color: whitesmoke;
+}
+main .text-content .container h1 .tag-one {
+  font-size: 1.1rem;
+  position: absolute;
+}
+main .text-content .container p {
+  font-family: "Jost", sans-serif;
+  font-size: 1rem;
+  color: rgba(157, 157, 157, 0.876);
+  line-height: 1.5rem;
+  text-align: left;
+  margin-right: 32%;
+}
+main .text-content .container .cta {
+  align-items: center;
+  margin-top: 8%;
+  color: whitesmoke;
+}
+main .text-content .container .cta h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  transition: all 0.5s ease;
+}
+main .text-content .container .cta span {
+  margin-left: 20px;
+  font-size: 2rem;
+}
+main .text-content .container a {
+  text-decoration: none;
+  color: whitesmoke;
+  outline-style: none;
+  transition: all 1s ease;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+main .text-content .container a:hover {
+  color: skyblue;
+  transform: scale(1.01);
+}
+main .image-content {
+  grid-area: image-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .image-content img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */

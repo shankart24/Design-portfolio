@@ -1,0 +1,11 @@
+
+@mixin flexy($justify-content,$align-items,$direction){
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $direction;
+}
+
+// for media queries
+
+//
